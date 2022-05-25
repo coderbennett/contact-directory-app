@@ -21,7 +21,7 @@ export const postDb = async (name, home, cell, email)  => {
     const contactsDb = await openDB('contacts', 1);
     const tx = contactsDb.transaction('contacts', 'readwrite');
     const store = tx.objectStore('contacts');
-    const request = store.add({ contact: {name, home, cell, email} });
+    const request = store.add({name, home_phone: home, cell_phone : cell, email} );
     const result = await request;
     console.log('result.value', result);
     return result;

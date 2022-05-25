@@ -26,10 +26,10 @@ module.exports = () => {
      }),
 
      new GenerateSW(),
-    //  new InjectManifest({
-    //    swSrc: './src/sw.js',
-    //    swDest: 'service-worker.js'
-    //  }),
+     new InjectManifest({
+       swSrc: 'src-sw.js',
+       swDest: 'src-sw.js'
+     }),
      new WebpackPwaManifest({
       name: 'Contact directory',
       short_name: 'contact',
